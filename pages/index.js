@@ -1,11 +1,11 @@
-import Head from "next/head";
-import Image from "next/image";
 import Meta from "../components/meta";
-import styles from "../styles/Home.module.css";
+// import Head from "next/head";
+// import Image from "next/image";
+// import styles from "../styles/Home.module.css";
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <div>
       <Meta
         title="HOME"
         name='description" content'
@@ -13,6 +13,7 @@ export default function Home() {
       >
         <link rel="icon" href="/favicon.ico" />
       </Meta>
+      <h1>Home Page</h1>
     </div>
   );
 }
