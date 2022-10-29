@@ -1,13 +1,16 @@
-import "../styles/globals.css";
 import Layout from "../layout";
-import 'antd/dist/antd.css';
-
+import { Provider } from "react-redux";
+import { store } from "../redux/store";
+import "../styles/globals.css";
+import "antd/dist/antd.css";
 
 export function App({ Component, pageProps }) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <Provider store={store}>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </Provider>
   );
 }
 

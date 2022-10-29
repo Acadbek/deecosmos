@@ -1,9 +1,20 @@
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import Meta from "../components/meta";
+import { fetchData } from "../redux/data";
 // import Head from "next/head";
 // import Image from "next/image";
 // import styles from "../styles/Home.module.css";
 
 export default function Home() {
+  const state = useSelector((state) => state.data);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchData());
+  }, []);
+
+  console.log(state);
   return (
     <div>
       <Meta
