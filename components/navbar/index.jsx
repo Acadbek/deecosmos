@@ -5,11 +5,11 @@ import { Select } from "antd";
 const Navbar = () => {
   const { Option } = Select;
   return (
-    <div className="flex justify-around bg-black h-14 items-center">
-      <Link href={"/"} className="text-white text-3xl mb-0">
+    <div className="flex justify-around bg-black h-14 items-center text-[15px]">
+      <Link href="/" className="text-white text-3xl mb-0">
         LOGO
       </Link>
-      <div className="flex gap-4">
+      <div className="flex gap-[50px] items-center">
         <Select
           showSearch
           style={{
@@ -31,9 +31,22 @@ const Navbar = () => {
           <Option value="5">Resolved</Option>
           <Option value="6">Cancelled</Option>
         </Select>
-        <button className="text-white">Search</button>
-        <Link href={"/contact"}>Contact</Link>
+        <Link
+          href={"/about"}
+          className="text-white text-[.875rem] font-semibold tracking-wider leading-[1.5rem]"
+        >
+          About
+        </Link>
+        <Link
+          className="text-white text-[.875rem] font-semibold tracking-wider leading-[1.5rem]"
+          href={"/contact"}
+        >
+          Contact
+        </Link>
       </div>
+      <button className="text-white text-[.875rem] font-semibold tracking-wider leading-[1.5rem]">
+        Login
+      </button>
     </div>
   );
 };
