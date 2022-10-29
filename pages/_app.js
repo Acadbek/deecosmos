@@ -1,7 +1,14 @@
-import '../styles/globals.css'
+import "../styles/globals.css";
+// import 'tailwindcss'
+// import 'styled-components'
+import Layout from "../layout";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
+  );
 }
 
-export default MyApp
+export default MyApp;
