@@ -30,9 +30,8 @@ const Navbar = () => {
           <Option value="4">Identified</Option>
           <Option value="5">Resolved</Option>
           <Option value="6">Cancelled</Option>
-          <Option value="7">Asadbek</Option>
         </Select>
-        <button className='text-white'>Search</button>
+        <button className="text-white">Search</button>
         <Link href={"/contact"}>Contact</Link>
       </div>
     </div>

@@ -29,29 +29,44 @@ a {
   }
 }
 
+/* START Dropdown menu: antd */
+
+.ant-select-show-search {
+  width: 150px !important;
+}
 .ant-select-selector {
   background-color: transparent !important;
   cursor: pointer !important;
   color: white !important;
   border: none !important;
+  font-size: 15px;
 }
-
 .ant-select-arrow {
   color: white !important;
 }
 .ant-select-dropdown {
   background-color: black !important;
   color: white !important;
+  width: 300px !important;
+  gap: 20px !important;
 }
 .ant-select-item-option-content {
   color: white !important;
+  font-size: 18px !important;
 }
 .ant-select-item-option-content:hover {
   color: white !important;
 }
+.ant-select-item {
+  margin-top: 10px;
+}
 .ant-select-item-option-active:not(.ant-select-item-option-disabled) {
-  background-color: gray !important;
+  background-color: transparent !important;
+  color: red !important;
 }
 .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
-  background-color: #333 !important;
+  background-color: transparent !important;
+  color: blue !important;
 }
+
+/* END Dropdown menu: antd  */
