@@ -1,9 +1,9 @@
 import "../styles/globals.css";
-// import 'tailwindcss'
-// import 'styled-components'
 import Layout from "../layout";
+import 'antd/dist/antd.css';
 
-function MyApp({ Component, pageProps }) {
+
+export function App({ Component, pageProps }) {
   return (
     <Layout>
       <Component {...pageProps} />
@@ -11,4 +11,4 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-export default MyApp;
+export default App;

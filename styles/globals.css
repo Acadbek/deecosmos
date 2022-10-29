@@ -28,3 +28,30 @@ a {
     background: black;
   }
 }
+
+.ant-select-selector {
+  background-color: transparent !important;
+  cursor: pointer !important;
+  color: white !important;
+  border: none !important;
+}
+
+.ant-select-arrow {
+  color: white !important;
+}
+.ant-select-dropdown {
+  background-color: black !important;
+  color: white !important;
+}
+.ant-select-item-option-content {
+  color: white !important;
+}
+.ant-select-item-option-content:hover {
+  color: white !important;
+}
+.ant-select-item-option-active:not(.ant-select-item-option-disabled) {
+  background-color: gray !important;
+}
+.ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+  background-color: #333 !important;
+}
