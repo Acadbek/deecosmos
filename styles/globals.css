@@ -55,4 +55,12 @@
   color: blue !important;
 }
 
+.ant-select-dropdown,
+.ant-select-dropdown-placement-bottomLeft,
+.ant-select-dropdown-hidden {
+  background-color: #191c21 !important;
+  border-radius: 10px !important;
+  margin-top: 20px !important;
+}
+
 /* END Dropdown menu: antd  */
