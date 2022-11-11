@@ -8,8 +8,8 @@ const AutoPlayCard = ({ data }) => {
         className="rounded-lg mb-4"
         src={data?.img}
         alt="img"
-        width={437}
-        height={250}
+        width={340}
+        height={170}
       />
     </div>
   );

@@ -5,9 +5,11 @@ import Meta from "../components/meta";
 import photo from "../public/photos/cardBg.webp";
 import AutoPlayCard from "../components/autoPlayCard";
 import Image from "next/image";
+import Button from "../generics/button";
 
 export default function Home() {
-  const image = `https://picsum.photos/id/25/437/250`;
+  const image = `https://picsum.photos/id/25/340/170`;
+
   const data = [
     {
       id: 1,
@@ -87,7 +89,6 @@ export default function Home() {
       subtitle: " Draw and Paint Realistic",
     },
   ];
-
   const images = [
     {
       id: 1,
@@ -142,7 +143,6 @@ export default function Home() {
       img: image,
     },
   ];
-
   const settings = {
     dots: false,
     infinite: false,
@@ -205,11 +205,9 @@ export default function Home() {
         </div>
       </div>
       <div className="slider">
-        <div className="slide-track  ml-[100px]">
+        <div className="slide-track ml-[150px]">
           {images?.map((data) => (
-            <div key={data.id} className="slide">
-              <AutoPlayCard data={data} />
-            </div>
+            <AutoPlayCard key={data.id} data={data} />
           ))}
         </div>
       </div>
@@ -224,7 +222,7 @@ export default function Home() {
           <p className="text-[#fff] text-center text-[35px] tracking-wider font-semibold mt-[100px]">
             Meet the world&apos;s best. New classes added every month.
           </p>
-          <div className="bigPhoto">
+          <div className="bigPhoto relative">
             <Image
               className="rounded-[10px] drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]"
               src={
@@ -234,6 +232,19 @@ export default function Home() {
               width={1231}
               height={655}
             />
+            <div className="text-white text-center flex justify-center items-center flex-col absolute top-1/2 right-[-100px] transform -translate-x-1/2 -translate-y-1/2">
+              <p className="bg-[#fff] inline-block text-black px-[12px] rounded-[9999px] text-[14px]">
+                New
+              </p>
+              <p className="text-white leading-[50px] mb-[20px] uppercase text-[55px] w-[350px]">
+                JOHN DOUGLAS
+              </p>
+              <div className="w-[40px] h-[4px] bg-white mb-[15px]"></div>
+              <p className=" font-semibold leading-[1.25] text-[1rem] tracking-wider">
+                Teaches How to Think Like an FBI Profiler
+              </p>
+              <Button>Watch Trailer</Button>
+            </div>
           </div>
         </div>
         <div className="mx-auto mt-12">
