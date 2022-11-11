@@ -16,9 +16,12 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-redux": "^8.0.4",
+    "react-slick": "^0.29.0",
+    "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.6"
   },
   "devDependencies": {
+    "@types/react-slick": "^0.23.10",
     "autoprefixer": "^10.4.13",
     "eslint": "8.26.0",
     "eslint-config-next": "13.0.0",

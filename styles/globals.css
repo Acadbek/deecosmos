@@ -64,3 +64,17 @@
 }
 
 /* END Dropdown menu: antd  */
+/*.slick-slide, .slick-active, .slick-current{*/
+/*    width: 300px !important;*/
+/*}*/
+
+.slick-next {
+  background-color: red !important;
+  right: 50px !important;
+  z-index: 999 !important;
+  /* color: blue !important; */
+}
+.slick-prev {
+  left: 50px !important;
+  z-index: 9999;
+}

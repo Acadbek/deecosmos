@@ -1,12 +1,64 @@
+import Slider from "react-slick";
+
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import Card from "../components/card";
 import Meta from "../components/meta";
 import { fetchData } from "../redux/data";
-// import Head from "next/head";
-// import Image from "next/image";
-// import styles from "../styles/Home.module.css";
-
+import photo from "../public/photos/cardBg.webp";
 export default function Home() {
+  const data = [
+    {
+      id: 1,
+      status: "New",
+      img: photo,
+      title: "DEVON RODRIGUEZ",
+      subtitle: " Draw and Paint Realistic",
+    },
+    {
+      id: 2,
+      status: "New",
+      img: photo,
+      title: "DEVON RODRIGUEZ",
+      subtitle: " Draw and Paint Realistic",
+    },
+    {
+      id: 3,
+      status: "Old",
+      img: photo,
+      title: "DEVON RODRIGUEZ",
+      subtitle: " Draw and Paint Realistic",
+    },
+    {
+      id: 4,
+      status: "New",
+      img: photo,
+      title: "DEVON RODRIGUEZ",
+      subtitle: " Draw and Paint Realistic",
+    },
+    {
+      id: 5,
+      status: "New",
+      img: photo,
+      title: "DEVON RODRIGUEZ",
+      subtitle: " Draw and Paint Realistic",
+    },
+    {
+      id: 6,
+      status: "New",
+      img: photo,
+      title: "DEVON RODRIGUEZ",
+      subtitle: " Draw and Paint Realistic",
+    },
+    {
+      id: 7,
+      status: "New",
+      img: photo,
+      title: "DEVON RODRIGUEZ",
+      subtitle: " Draw and Paint Realistic",
+    },
+  ];
+
   const state = useSelector((state) => state.data);
   const dispatch = useDispatch();
 
@@ -14,9 +66,45 @@ export default function Home() {
     dispatch(fetchData());
   }, []);
 
-  console.log(state);
+  const arrow = <div style={{ display: "block", background: "green" }} />;
+
+  var settings = {
+    dots: false,
+    infinite: false,
+    speed: 200,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
   return (
-    <div>
+    <div className="">
       <Meta
         title="HOME"
         name='description" content'
@@ -25,6 +113,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Meta>
       <h1>Home Page</h1>
+      <Slider {...settings}>
+        {data?.map((value) => (
+          <Card key={value.id} value={value} />
+        ))}
+      </Slider>
     </div>
   );
 }
