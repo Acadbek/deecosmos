@@ -3,6 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
+    domains: ["www.masterclass.com", "www.picsum.photos.com"],
     remotePatterns: [
       {
         protocol: "https",

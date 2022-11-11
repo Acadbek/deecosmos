@@ -1,12 +1,10 @@
 import Slider from "react-slick";
 
-import { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
 import Card from "../components/card";
 import Meta from "../components/meta";
-import { fetchData } from "../redux/data";
 import photo from "../public/photos/cardBg.webp";
 import AutoPlayCard from "../components/autoPlayCard";
+import Image from "next/image";
 
 export default function Home() {
   const image = `https://picsum.photos/id/25/437/250`;
@@ -145,14 +143,7 @@ export default function Home() {
     },
   ];
 
-  // const state = useSelector((state) => state.data);
-  const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   dispatch(fetchData());
-  // }, []);
-
-  var settings = {
+  const settings = {
     dots: false,
     infinite: false,
     speed: 200,
@@ -196,18 +187,6 @@ export default function Home() {
     ],
   };
 
-  const settingsForAutoPlaySlider = {
-    dots: false,
-    infinite: true,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    autoplay: true,
-    speed: 6000,
-    autoplaySpeed: 6000,
-    cssEase: "linear",
-    pauseOnHover: false,
-  };
-
   return (
     <div className="bg-black">
       <Meta
@@ -234,13 +213,36 @@ export default function Home() {
           ))}
         </div>
       </div>
-      <hr />
       <div className="container mx-auto">
-        <Slider {...settings}>
-          {data?.map((value) => (
-            <Card className="slide" key={value.id} value={value} />
-          ))}
-        </Slider>
+        <h2 className="text-white leading-[.85] tracking-[.01] uppercase font-semibold text-[3rem] mt-[40px]">
+          GAIN NEW SKILLS IN 10 MINUTES
+        </h2>
+        <p className="leading-[1.6] text-[1.2rem] tracking-[0.1em] text-white">
+          Unlimited access to 180+ classes delivered in bite-sized lessons.
+        </p>
+        <div className="flex flex-col items-center">
+          <p className="text-[#fff] text-center text-[35px] tracking-wider font-semibold mt-[100px]">
+            Meet the world&apos;s best. New classes added every month.
+          </p>
+          <div className="bigPhoto">
+            <Image
+              className="rounded-[10px] drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]"
+              src={
+                "https://www.masterclass.com/course-images/attachments/czkh9w0hosqeyg45kfd4w5twydzc?width=1920&quality=75&format=webp"
+              }
+              alt="big photo"
+              width={1231}
+              height={655}
+            />
+          </div>
+        </div>
+        <div className="mx-auto mt-12">
+          <Slider {...settings}>
+            {data?.map((value) => (
+              <Card className="slide" key={value.id} value={value} />
+            ))}
+          </Slider>
+        </div>
       </div>
     </div>
   );

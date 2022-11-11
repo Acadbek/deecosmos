@@ -134,3 +134,7 @@
   border-radius: 30px !important;
   /* object-fit: cover; */
 }
+
+.bigPhoto {
+  /* box-shadow: inset 5px 5px 10px red, inset -5px -5px 10px blue; */
+}
