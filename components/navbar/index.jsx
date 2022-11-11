@@ -5,7 +5,7 @@ import { Select } from "antd";
 const Navbar = () => {
   const { Option } = Select;
   return (
-    <div className="flex justify-around bg-black h-14 items-center text-[15px]">
+    <div className="flex fixed z-[999] w-full justify-around bg-black h-14 items-center text-[15px]">
       <Link href="/" className="text-white text-3xl mb-0">
         LOGO
       </Link>

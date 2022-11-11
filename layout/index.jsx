@@ -3,10 +3,10 @@ import Navbar from "../components/navbar";
 
 const Layout = ({ children }) => {
   return (
-    <div>
+    <>
       <Navbar />
-      {children}
-    </div>
+      <div>{children}</div>
+    </>
   );
 };
 
