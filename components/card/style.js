@@ -32,19 +32,17 @@ const Wrapper = styled.div`
   }
 `;
 
-// const Blur = styled.div`
-//   position: absolute;
-//   transition: all 0.2s ease-in;
-//   top: 0;
-//   border-radius: 3px;
-//   left: 0;
-//   bottom: 0;
-//   right: 0;
-//   background-color: rgba(0, 0, 0, 0.2);
-//   :hover {
-//     background-color: transparent;
-//   }
-// `;
+const Blur = styled.div`
+  position: absolute;
+  top: 0;
+  border-radius: 3px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  box-shadow: -200px 22px 106px -19px rgba(0, 0, 0, 1) inset;
+  -webkit-box-shadow: -400px 22px 106px -19px rgba(0, 0, 0, 1) inset;
+  -moz-box-shadow: -200px 22px 106px -19px rgba(0, 0, 0, 1) inset;
+`;
 
 const Title = styled.h2`
   font-size: 38px;
@@ -83,4 +81,4 @@ const Status = styled.div`
   z-index: 999;
 `;
 
-export { Container, Status, Title, Content, Subtitle, Wrapper };
+export { Container, Status, Title, Content, Subtitle, Wrapper, Blur };

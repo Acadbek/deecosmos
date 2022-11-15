@@ -5,7 +5,8 @@ import photo from "../public/photos/cardBg.webp";
 import AutoPlayCard from "../components/autoPlayCard";
 import Image from "next/image";
 import Button from "../generics/button";
-
+import "../styles/Home.module.css";
+import { Blur } from "../components/card/style";
 export default function Home() {
   const image = `https://picsum.photos/id/25/340/170`;
 
@@ -222,8 +223,9 @@ export default function Home() {
             Meet the world&apos;s best. New classes added every month.
           </p>
           <div className="bigPhoto relative">
+            <Blur />
             <Image
-              className="rounded-[10px] drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]"
+              className="rounded-[10px]"
               src={
                 "https://www.masterclass.com/course-images/attachments/czkh9w0hosqeyg45kfd4w5twydzc?width=1920&quality=75&format=webp"
               }
