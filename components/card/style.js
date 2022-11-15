@@ -1,12 +1,14 @@
 import styled from "styled-components";
 
 const Container = styled.div`
+  background: red;
   border-radius: 1rem;
   position: relative;
-  width: 283px;
+  max-width: 283px;
+  /* 516 290 283px */
   height: 474px;
+  width: 100%;
   transition: all 0.2s ease-in;
-
   cursor: pointer;
   overflow: hidden;
   background-color: black;

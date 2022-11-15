@@ -1,0 +1,15 @@
+ <svg
+        width="24"
+        height="25"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+        role="img"
+        class="mc-icon mc-icon--md mc-mr-2"
+      >
+        <path
+          d="M7.791 2.695a1.25 1.25 0 0 0-1.92 1.055v17.5a1.25 1.25 0 0 0 1.92 1.055l13.75-8.75a1.25 1.25 0 0 0 0-2.11l-13.75-8.75Z"
+          fill="white"
+        ></path>
+      </svg>

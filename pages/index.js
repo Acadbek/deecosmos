@@ -1,5 +1,4 @@
 import Slider from "react-slick";
-
 import Card from "../components/card";
 import Meta from "../components/meta";
 import photo from "../public/photos/cardBg.webp";
@@ -243,7 +242,7 @@ export default function Home() {
               <p className=" font-semibold leading-[1.25] text-[1rem] tracking-wider">
                 Teaches How to Think Like an FBI Profiler
               </p>
-              <Button>Watch Trailer</Button>
+              <Button type="black">Watch Trailer</Button>
             </div>
           </div>
         </div>
@@ -254,6 +253,7 @@ export default function Home() {
             ))}
           </Slider>
         </div>
+        <Card type="comingSoon" />
       </div>
     </div>
   );
