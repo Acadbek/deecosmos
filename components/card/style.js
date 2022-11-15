@@ -73,7 +73,7 @@ const Status = styled.div`
   border-radius: 9999px;
   padding: 0 ${({ type }) => (type === "comingSoon" ? "30px" : "12px")};
   font-size: 14px;
-  z-index: 999;
+  z-index: 99999;
 `;
 
 // styles for comingSoon component
