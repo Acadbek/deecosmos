@@ -5,7 +5,6 @@ import photo from "../public/photos/cardBg.webp";
 import AutoPlayCard from "../components/autoPlayCard";
 import Image from "next/image";
 import Button from "../generics/button";
-import "../styles/Home.module.css";
 import { Blur } from "../components/card/style";
 export default function Home() {
   const image = `https://picsum.photos/id/25/340/170`;
@@ -187,6 +186,9 @@ export default function Home() {
     ],
   };
 
+  const comingSoonImg =
+    "https://www.masterclass.com/course-images/attachments/sjiytn0p38hi9w4gcah272emt6k4?width=1920&quality=75&format=webp";
+
   return (
     <div className="bg-black">
       <Meta
@@ -255,7 +257,7 @@ export default function Home() {
             ))}
           </Slider>
         </div>
-        <Card type="comingSoon" />
+        <Card comingSoonImg={comingSoonImg} type="comingSoon" />
       </div>
     </div>
   );

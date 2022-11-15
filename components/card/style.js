@@ -4,9 +4,8 @@ const Container = styled.div`
   background: red;
   border-radius: 1rem;
   position: relative;
-  max-width: 283px;
-  /* 516 290 283px */
-  height: 474px;
+  max-width: ${({ type }) => (type === "comingSoon" ? "516px" : "283px")};
+  height: ${({ type }) => (type === "comingSoon" ? "290px" : "474px")};
   width: 100%;
   transition: all 0.2s ease-in;
   cursor: pointer;
@@ -18,16 +17,14 @@ const Container = styled.div`
 
 const Wrapper = styled.div`
   transition: all 0.1s ease;
-  opacity: 0.8;
 
   .img {
     transition: all 0.2s ease;
     border-radius: 1rem;
   }
   :hover {
-    opacity: 1;
     .img {
-      transform: scale(1.05);
+      transform: scale(1.03);
     }
   }
 `;
@@ -76,9 +73,44 @@ const Status = styled.div`
   left: 12px;
   background-color: white;
   border-radius: 9999px;
-  padding: 0 12px;
+  padding: 0 ${({ type }) => (type === "comingSoon" ? "30px" : "12px")};
   font-size: 14px;
   z-index: 999;
 `;
 
-export { Container, Status, Title, Content, Subtitle, Wrapper, Blur };
+// styles for comingSoon component
+
+const ContentForComingSoon = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+`;
+
+const ComingSoonTitle = styled.h3`
+  font-weight: 600;
+  line-height: 1.25;
+  font-size: 24px;
+  color: #fff;
+`;
+
+const ComingSoonBlur = styled.div`
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+`;
+
+export {
+  Container,
+  Status,
+  Title,
+  Content,
+  Subtitle,
+  Wrapper,
+  Blur,
+  ContentForComingSoon,
+  ComingSoonTitle,
+  ComingSoonBlur,
+};
