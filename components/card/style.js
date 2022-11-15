@@ -36,7 +36,7 @@ const Blur = styled.div`
   left: 0;
   bottom: 0;
   right: 0;
-  box-shadow: -200px 23px 106px -19px rgba(0, 0, 0, 1) inset;
+  box-shadow: -200px 22px 106px -19px rgba(0, 0, 0, 1) inset;
   -webkit-box-shadow: -400px 22px 106px -19px rgba(0, 0, 0, 1) inset;
   -moz-box-shadow: -200px 22px 106px -19px rgba(0, 0, 0, 1) inset;
 `;

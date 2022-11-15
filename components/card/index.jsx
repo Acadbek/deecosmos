@@ -24,6 +24,7 @@ const Card = ({ value, type, comingSoonImg, comingSoonLink, link }) => {
             <Link href={comingSoonLink || "#"}>
               <ComingSoonBlur />
               <Image
+                className="img"
                 src={
                   comingSoonImg ||
                   "https://www.masterclass.com/course-images/attachments/sjiytn0p38hi9w4gcah272emt6k4?width=1920&quality=75&format=webp"
