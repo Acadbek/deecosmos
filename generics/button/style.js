@@ -31,10 +31,6 @@ const getType = ({ type }) => {
   }
 };
 
-const Wrapper = styled.div`
-  position: relative;
-`;
-
 const Buttons = styled.button`
   font-size: 14px;
   display: inline-flex;
@@ -69,4 +65,4 @@ const ImageWrapper = styled.div`
   left: 10px;
 `;
 
-export { Buttons, Wrapper, ImageWrapper };
+export { Buttons, ImageWrapper };

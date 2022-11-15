@@ -133,3 +133,11 @@
   width: 437px;
   border-radius: 30px !important;
 }
+
+.slick-dots li button::before {
+  color: white !important;
+}
+/* li .slick-active {
+  color: red !important;
+  background-color: red !important;
+} */

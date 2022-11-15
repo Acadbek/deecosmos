@@ -6,6 +6,7 @@ import AutoPlayCard from "../components/autoPlayCard";
 import Image from "next/image";
 import Button from "../generics/button";
 import { Blur } from "../components/card/style";
+import Link from "next/link";
 export default function Home() {
   const image = `https://picsum.photos/id/25/340/170`;
 
@@ -143,7 +144,7 @@ export default function Home() {
     },
   ];
   const settings = {
-    dots: false,
+    dots: true,
     infinite: false,
     speed: 200,
     slidesToShow: 4,
@@ -251,11 +252,20 @@ export default function Home() {
           </div>
         </div>
         <div className="mx-auto mt-12">
+          <div className="flex items-center gap-4">
+            <h2 className="text-white text-[30px] font-bold">Trading...</h2>
+            <Link className="text-[#999999] text-[20px]" href={"#"}>
+              See all
+            </Link>
+          </div>
           <Slider {...settings}>
             {data?.map((value) => (
               <Card className="slide" key={value.id} value={value} />
             ))}
           </Slider>
+          <div className="flex items-center justify-center mt-[50px]">
+            <Button type={"gray"}>Explore Classes</Button>
+          </div>
         </div>
         <Card comingSoonImg={comingSoonImg} type="comingSoon" />
       </div>
