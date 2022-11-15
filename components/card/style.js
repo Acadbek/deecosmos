@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-  background: red;
   border-radius: 1rem;
   position: relative;
   max-width: ${({ type }) => (type === "comingSoon" ? "516px" : "283px")};
@@ -10,7 +9,6 @@ const Container = styled.div`
   transition: all 0.2s ease-in;
   cursor: pointer;
   overflow: hidden;
-  background-color: black;
   margin-left: 10px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
 `;
@@ -84,6 +82,7 @@ const ContentForComingSoon = styled.div`
   position: absolute;
   bottom: 0;
   left: 0;
+  z-index: 99999;
 `;
 
 const ComingSoonTitle = styled.h3`
@@ -100,6 +99,7 @@ const ComingSoonBlur = styled.div`
   right: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.4);
+  z-index: 9999;
 `;
 
 export {
