@@ -1,0 +1,3 @@
+Should be fixed:
+
+1-Warning: Prop `className` did not match. Server: "sc-GKYbw fJlaBI" Client: "sc-dkrFOg grBaRr" (console.log)
