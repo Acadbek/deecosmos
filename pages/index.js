@@ -8,10 +8,24 @@ import Button from "../generics/button";
 import { Blur } from "../components/card/style";
 import Link from "next/link";
 import { CustomSlider } from "./style";
-export default function Home() {
+
+export const getStaticProps = async () => {
+  const res = await fetch("http://localhost:3000/data");
+  const res2 = await fetch("http://localhost:3000/comingSoon");
+  const data = await res.json();
+  const data2 = await res2.json();
+  return {
+    props: {
+      data: data,
+      comingSoonData: data2,
+    },
+  };
+};
+
+export default function Home({ data, comingSoonData }) {
   const image = `https://picsum.photos/id/25/340/170`;
 
-  const data = [
+  const datas = [
     {
       id: 1,
       status: "New",
@@ -90,6 +104,7 @@ export default function Home() {
       subtitle: " Draw and Paint Realistic",
     },
   ];
+  // images for autoplay carousel
   const images = [
     {
       id: 1,
@@ -144,6 +159,7 @@ export default function Home() {
       img: image,
     },
   ];
+  // settings for carousel
   const settings = {
     dots: true,
     infinite: false,
@@ -187,6 +203,7 @@ export default function Home() {
       },
     ],
   };
+  // settings for second carousel
   const settingsForComingSoon = {
     dots: true,
     infinite: false,
@@ -230,41 +247,41 @@ export default function Home() {
       },
     ],
   };
-  const comingSoonData = [
-    {
-      id: 1,
-      name: "Mindy Weiss 1",
-      subTitle: "Plan Your Dream Wedding",
-      img: 'https://www.masterclass.com/course-images/attachments/sjiytn0p38hi9w4gcah272emt6k4?width=1920&quality=75&format=webp"',
-    },
-    {
-      id: 2,
-      name: "Mindy Weiss 2",
-      subTitle: "Plan Your Dream Wedding",
-      img: 'https://www.masterclass.com/course-images/attachments/sjiytn0p38hi9w4gcah272emt6k4?width=1920&quality=75&format=webp"',
-    },
-    {
-      id: 3,
-      name: "Mindy Weiss 3",
-      subTitle: "Plan Your Dream Wedding",
-      img: 'https://www.masterclass.com/course-images/attachments/sjiytn0p38hi9w4gcah272emt6k4?width=1920&quality=75&format=webp"',
-    },
-    {
-      id: 4,
-      name: "Mindy Weiss 3",
-      subTitle: "Plan Your Dream Wedding",
-      img: 'https://www.masterclass.com/course-images/attachments/sjiytn0p38hi9w4gcah272emt6k4?width=1920&quality=75&format=webp"',
-    },
-    {
-      id: 5,
-      name: "Mindy Weiss 3",
-      subTitle: "Plan Your Dream Wedding",
-      img: 'https://www.masterclass.com/course-images/attachments/sjiytn0p38hi9w4gcah272emt6k4?width=1920&quality=75&format=webp"',
-    },
-  ];
+  // coming soon data
+  // const comingSoonData = [
+  //   {
+  //     id: 1,
+  //     name: "Mindy Weiss 1",
+  //     subTitle: "Plan Your Dream Wedding",
+  //     img: 'https://www.masterclass.com/course-images/attachments/sjiytn0p38hi9w4gcah272emt6k4?width=1920&quality=75&format=webp"',
+  //   },
+  //   {
+  //     id: 2,
+  //     name: "Mindy Weiss 2",
+  //     subTitle: "Plan Your Dream Wedding",
+  //     img: 'https://www.masterclass.com/course-images/attachments/sjiytn0p38hi9w4gcah272emt6k4?width=1920&quality=75&format=webp"',
+  //   },
+  //   {
+  //     id: 3,
+  //     name: "Mindy Weiss 3",
+  //     subTitle: "Plan Your Dream Wedding",
+  //     img: 'https://www.masterclass.com/course-images/attachments/sjiytn0p38hi9w4gcah272emt6k4?width=1920&quality=75&format=webp"',
+  //   },
+  //   {
+  //     id: 4,
+  //     name: "Mindy Weiss 3",
+  //     subTitle: "Plan Your Dream Wedding",
+  //     img: 'https://www.masterclass.com/course-images/attachments/sjiytn0p38hi9w4gcah272emt6k4?width=1920&quality=75&format=webp"',
+  //   },
+  //   {
+  //     id: 5,
+  //     name: "Mindy Weiss 3",
+  //     subTitle: "Plan Your Dream Wedding",
+  //     img: 'https://www.masterclass.com/course-images/attachments/sjiytn0p38hi9w4gcah272emt6k4?width=1920&quality=75&format=webp"',
+  //   },
+  // ];
 
-  const comingSoonImg =
-    "https://www.masterclass.com/course-images/attachments/sjiytn0p38hi9w4gcah272emt6k4?width=1920&quality=75&format=webp";
+  console.log();
 
   return (
     <div className="bg-black">

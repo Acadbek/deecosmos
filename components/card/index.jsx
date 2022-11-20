@@ -26,7 +26,7 @@ const Card = ({
   // console.log(dataForComingSoon, "comingSoon");
   return (
     <Fragment>
-      <Container type={type} key={data?.id}>
+      <Container type={type}>
         <Wrapper>
           <Status type={type}>{data?.status || "New"}</Status>
           {type === "comingSoon" ? (
@@ -59,9 +59,9 @@ const Card = ({
                 alt="Author"
               />
               <Content>
-                <Title>{data?.title || "Devon Rodriguez"}</Title>
+                <Title>{data?.title}</Title>
                 <div className="w-[40px] mb-9 h-[4px] bg-white"></div>
-                <Subtitle>{data?.subtitle || "Draw and Paint"}</Subtitle>
+                <Subtitle>{data?.subtitle}</Subtitle>
               </Content>
             </Link>
           )}

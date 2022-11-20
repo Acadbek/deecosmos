@@ -5,7 +5,6 @@ const CustomSlider = styled(Slider)`
   .slick-slide {
     width: ${({ type }) =>
       type === "comingSoon" ? "540px" : "320px"}!important;
-    /* console.log(type, "type") */
   }
 `;
 
