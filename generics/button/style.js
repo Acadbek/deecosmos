@@ -41,12 +41,12 @@ const Buttons = styled.button`
   line-height: 28px;
   letter-spacing: 0.01em;
   text-transform: capitalize;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  padding-left: 35px;
-  padding-right: 22px;
+  padding-top: ${({ paddingX }) => `${paddingX}px`};
+  padding-bottom: ${({ paddingX }) => `${paddingX}px`};
+  padding-left: ${({ icon }) => (icon ? "45px" : "30px")};
+  padding-right: 27px;
   border-radius: 8px;
-  transition: background 0.25s ease, box-shadow 0.25s ease;
+  transition: background 0.26s ease, box-shadow 0.25s ease;
   vertical-align: middle;
   white-space: nowrap;
   border: 1px solid white;
@@ -61,8 +61,8 @@ const Buttons = styled.button`
 
 const ImageWrapper = styled.div`
   position: absolute;
-  top: 6px;
-  left: 10px;
+  top: 10px;
+  left: 15px;
 `;
 
 export { Buttons, ImageWrapper };

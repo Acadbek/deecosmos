@@ -4,6 +4,7 @@ import React, { Fragment } from "react";
 import photo from "../../public/photos/cardBg.webp";
 import {
   ComingSoonBlur,
+  ComingSoonSubTitle,
   ComingSoonTitle,
   Container,
   Content,
@@ -14,19 +15,27 @@ import {
   Wrapper,
 } from "./style";
 
-const Card = ({ value, type, comingSoonImg, comingSoonLink, link }) => {
+const Card = ({
+  dataForComingSoon,
+  data,
+  type,
+  comingSoonImg,
+  comingSoonLink,
+  link,
+}) => {
+  // console.log(dataForComingSoon, "comingSoon");
   return (
     <Fragment>
-      <Container type={type} key={value?.id}>
+      <Container type={type} key={data?.id}>
         <Wrapper>
-          <Status type={type}>{value?.status || "New"}</Status>
+          <Status type={type}>{data?.status || "New"}</Status>
           {type === "comingSoon" ? (
             <Link href={comingSoonLink || "#"}>
               <ComingSoonBlur />
               <Image
                 className="img"
                 src={
-                  comingSoonImg ||
+                  // dataForComingSoon?.img ||
                   "https://www.masterclass.com/course-images/attachments/sjiytn0p38hi9w4gcah272emt6k4?width=1920&quality=75&format=webp"
                 }
                 width={516}
@@ -34,8 +43,10 @@ const Card = ({ value, type, comingSoonImg, comingSoonLink, link }) => {
                 alt="Coming soon photo"
               />
               <ContentForComingSoon>
-                <ComingSoonTitle>Mindy Weiss</ComingSoonTitle>
-                <p>Plan Your Dream Wedding</p>
+                <ComingSoonTitle>{dataForComingSoon?.name}</ComingSoonTitle>
+                <ComingSoonSubTitle>
+                  {dataForComingSoon?.subTitle}
+                </ComingSoonSubTitle>
               </ContentForComingSoon>
             </Link>
           ) : (
@@ -44,13 +55,13 @@ const Card = ({ value, type, comingSoonImg, comingSoonLink, link }) => {
                 className="img"
                 width={283}
                 height={474}
-                src={value?.img || photo}
+                src={data?.img || photo}
                 alt="Author"
               />
               <Content>
-                <Title>{value?.title || "Devon Rodrigues"}</Title>
+                <Title>{data?.title || "Devon Rodriguez"}</Title>
                 <div className="w-[40px] mb-9 h-[4px] bg-white"></div>
-                <Subtitle>{value?.subtitle || "Draw and Paint"}</Subtitle>
+                <Subtitle>{data?.subtitle || "Draw and Paint"}</Subtitle>
               </Content>
             </Link>
           )}

@@ -7,6 +7,7 @@ import Image from "next/image";
 import Button from "../generics/button";
 import { Blur } from "../components/card/style";
 import Link from "next/link";
+import { CustomSlider } from "./style";
 export default function Home() {
   const image = `https://picsum.photos/id/25/340/170`;
 
@@ -186,6 +187,81 @@ export default function Home() {
       },
     ],
   };
+  const settingsForComingSoon = {
+    dots: true,
+    infinite: false,
+    speed: 200,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    initialSlide: 1,
+    responsive: [
+      {
+        breakpoint: 1124,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 780,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 592,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 450,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 1,
+        },
+      },
+    ],
+  };
+  const comingSoonData = [
+    {
+      id: 1,
+      name: "Mindy Weiss 1",
+      subTitle: "Plan Your Dream Wedding",
+      img: 'https://www.masterclass.com/course-images/attachments/sjiytn0p38hi9w4gcah272emt6k4?width=1920&quality=75&format=webp"',
+    },
+    {
+      id: 2,
+      name: "Mindy Weiss 2",
+      subTitle: "Plan Your Dream Wedding",
+      img: 'https://www.masterclass.com/course-images/attachments/sjiytn0p38hi9w4gcah272emt6k4?width=1920&quality=75&format=webp"',
+    },
+    {
+      id: 3,
+      name: "Mindy Weiss 3",
+      subTitle: "Plan Your Dream Wedding",
+      img: 'https://www.masterclass.com/course-images/attachments/sjiytn0p38hi9w4gcah272emt6k4?width=1920&quality=75&format=webp"',
+    },
+    {
+      id: 4,
+      name: "Mindy Weiss 3",
+      subTitle: "Plan Your Dream Wedding",
+      img: 'https://www.masterclass.com/course-images/attachments/sjiytn0p38hi9w4gcah272emt6k4?width=1920&quality=75&format=webp"',
+    },
+    {
+      id: 5,
+      name: "Mindy Weiss 3",
+      subTitle: "Plan Your Dream Wedding",
+      img: 'https://www.masterclass.com/course-images/attachments/sjiytn0p38hi9w4gcah272emt6k4?width=1920&quality=75&format=webp"',
+    },
+  ];
 
   const comingSoonImg =
     "https://www.masterclass.com/course-images/attachments/sjiytn0p38hi9w4gcah272emt6k4?width=1920&quality=75&format=webp";
@@ -247,7 +323,9 @@ export default function Home() {
               <p className=" font-semibold leading-[1.25] text-[1rem] tracking-wider">
                 Teaches How to Think Like an FBI Profiler
               </p>
-              <Button type="black">Watch Trailer</Button>
+              <Button icon={true} paddingX={6} type="black">
+                Watch Trailer
+              </Button>
             </div>
           </div>
         </div>
@@ -259,15 +337,25 @@ export default function Home() {
             </Link>
           </div>
           <Slider {...settings}>
-            {data?.map((value) => (
-              <Card className="slide" key={value.id} value={value} />
+            {data?.map((data) => (
+              <Card key={data.id} data={data} />
             ))}
           </Slider>
-          <div className="flex items-center justify-center mt-[50px]">
-            <Button type={"gray"}>Explore Classes</Button>
+          <div className="flex items-center justify-center mt-[60px] mb-[80px]">
+            <Button paddingX={6} explore={true} type={"gray"}>
+              Explore Classes
+            </Button>
           </div>
         </div>
-        <Card comingSoonImg={comingSoonImg} type="comingSoon" />
+        <CustomSlider type="comingSoon" {...settingsForComingSoon}>
+          {comingSoonData?.map((dataForComingSoon) => (
+            <Card
+              type="comingSoon"
+              key={dataForComingSoon.id}
+              dataForComingSoon={dataForComingSoon}
+            />
+          ))}
+        </CustomSlider>
       </div>
     </div>
   );
